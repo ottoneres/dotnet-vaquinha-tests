@@ -7,5 +7,7 @@
         public PessoaViewModel DadosPessoais { get; set; }
         public EnderecoViewModel EnderecoCobranca { get; set; }
         public CartaoCreditoViewModel FormaPagamento { get; set; }
+
+        public bool AceitaTaxa { get; set; }
     }
 }

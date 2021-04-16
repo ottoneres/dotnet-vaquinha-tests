@@ -55,8 +55,17 @@ namespace Vaquinha.AutomatedUITests
 
 			//Act
 			IWebElement webElement = null;
-			webElement = _driver.FindElement(By.ClassName("btn-yellow"));
+			webElement = _driver.FindElement(By.XPath("btn btn-yellow"));
 			webElement.Click();
+
+			IWebElement campoNome = _driver.FindElement(By.Id("DadosPessoais_Nome"));
+			campoNome.SendKeys(doacao.DadosPessoais.Nome);
+
+			IWebElement campoEmail = _driver.FindElement(By.Id("DadosPessoas_Email"));
+			campoEmail.SendKeys(doacao.DadosPessoais.Email);
+
+			IWebElement campoValorDoacao = _driver.FindElement(By.Id("valor"));
+			campoValorDoacao.SendKeys(doacao.Valor.ToString());
 
 			//Assert
 			_driver.Url.Should().Contain("/Doacoes/Create");
